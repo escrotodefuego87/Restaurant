@@ -1,18 +1,35 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
-  </div>
+
+<v-app>
+  <v-banner single-line>
+    Setup del proyecto, todo listo para empezar el desarrollo!
+    <template v-slot:actions>
+      <v-btn
+        @click="sayhi()"
+        text
+        color="deep-purple accent-4"
+      >
+        Hi!
+      </v-btn>
+    </template>
+  </v-banner>
+</v-app>
+  
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
+import HelloWorld from '../components/HelloWorld';
 
 export default {
-  name: "home",
   components: {
-    HelloWorld
-  }
+    HelloWorld,
+  },
+  methods: {
+
+    sayhi(){
+      alert('Muestra');
+    }
+
+  },
 };
 </script>
