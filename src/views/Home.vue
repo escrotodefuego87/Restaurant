@@ -26,7 +26,7 @@ export default {
   },
   methods: {
 
-    sayhi(){
+    sayhi: function(){
       alert('Muestra');
     }
 
