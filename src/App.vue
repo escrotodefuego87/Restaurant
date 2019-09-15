@@ -12,6 +12,13 @@
       >
         <span class="mr-2">Vuetify documentation</span>
       </v-btn>
+      <v-btn
+        text
+        href="https://vuejs.org/v2/guide/"
+        target="_blank"
+      >
+        <span class="mr-2">Vue.js documentation</span>
+      </v-btn>
     </v-app-bar>
 
     <v-content>
