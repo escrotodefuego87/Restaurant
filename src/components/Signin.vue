@@ -1,10 +1,10 @@
 <template>
     <v-row justify="center">
-        <v-dialog v-model="this.dialog3" persistent max-width="300">
+        <v-dialog v-model="dialog" persistent max-width="300">
             <v-form ref="form" v-model="valid">
             <v-card>
                 <v-card-title>
-                    <span class="headline">Log in</span>
+                    <span class="headline">Sign in</span>
                 </v-card-title>
                 <v-card-text>
                    <v-text-field
@@ -15,14 +15,22 @@
                 ></v-text-field>
                 <v-text-field
                     type="password"
+                    :counter="8"
                     v-model="password"
                     :rules="passRules"
                     label="Password"
                     required
                 ></v-text-field>
+                 <v-select
+                    v-model="select"
+                    :items="items"
+                    :rules="[v => !!v || 'User Type is required']"
+                    label="User Type"
+                    required
+                    ></v-select>
                 </v-card-text>
                 <v-card-actions>
-                    <v-btn block color="primary">Log In</v-btn>
+                    <v-btn block color="primary">Sign In</v-btn>
                 </v-card-actions>
             </v-card>
             </v-form>
@@ -31,10 +39,9 @@
 </template>
 <script>
 export default {
-    props: ["dial"],
-    name: 'Login',
+    name: 'Signin',
     data: () => ({
-        dialog3: false,
+        dialog: true,
         valid: true,
         user: '',
         userRules: [
@@ -43,11 +50,18 @@ export default {
         password: '',
         passRules: [
         v => !!v || 'Password is requiered',
-        ]
+        v => (v && v.length > 8) || 'Password must be at least 8 characters',
+        ],
+        select: null,
+      items: [
+        'admin',
+        'waiter',
+        'common'
+      ],
     }),
     mounted() {
-        console.log(this.dial)
-    }
+
+}
     
 }
 </script>

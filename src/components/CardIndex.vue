@@ -1,3 +1,4 @@
+/* eslint-disable */
 <template>
     <v-card class="mx-auto" max-width="400px">
     <v-img class="white--text" height="180px" v-bind:src="source" />
@@ -19,9 +20,7 @@ export default {
       }
     },
     methods: {
-      hola() {
-        console.log(source)
-      }
+     
     },
     mounted() {
     }
@@ -32,4 +31,3 @@ export default {
  
 </style>
 
-/* eslint-disable */

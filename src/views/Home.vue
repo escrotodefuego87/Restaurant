@@ -1,3 +1,4 @@
+/* eslint-disable */
 <template>
   <div class="back">
     <v-app id="inspire">
@@ -31,8 +32,8 @@
           </section>
         </v-container>
       </v-content>
-      <Login />
-    
+      <Login :dial="this.dialog2" />
+    <Signin />
     </v-app>
   </div>
 </template>
@@ -40,24 +41,30 @@
 <script>
 import CardIn from '../components/CardIndex';
 import Login from '../components/Login';
+import Signin from '../components/Signin';
+
 
 export default {
   name: 'Home',
+  props: ['dialog'],
+
   data: function(){
     return {
-      props: ['props'],
+      dialog2: this.dialog
       
       
 }
   },
   components: {
     CardIn,
-    Login
+    Login,
+    Signin
   },
   mounted(){
-  
+  console.log(this.dialog)
   },
   methods: {
+    
 
 
   },
