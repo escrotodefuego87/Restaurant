@@ -32,8 +32,8 @@
           </section>
         </v-container>
       </v-content>
-      <Login :dial="this.dialog2" />
-    <Signin />
+      
+    <!-- <Signin /> -->
     </v-app>
   </div>
 </template>
@@ -46,11 +46,11 @@ import Signin from '../components/Signin';
 
 export default {
   name: 'Home',
-  props: ['dialog'],
+  // props: ['dialog'],
 
   data: function(){
     return {
-      dialog2: this.dialog
+      // dialog: true
       
       
 }
@@ -61,8 +61,8 @@ export default {
     Signin
   },
   mounted(){
-  console.log(this.dialog)
-  },
+
+},
   methods: {
     
 

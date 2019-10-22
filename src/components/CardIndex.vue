@@ -1,7 +1,7 @@
 /* eslint-disable */
 <template>
     <v-card class="mx-auto" max-width="400px">
-    <v-img class="white--text" height="180px" v-bind:src="source" />
+    <v-img class="white--text" height="180px" v-bind:src="sourceImg" />
     <v-card-text>
       <span class="title">{{titulo}}</span><br>
       
@@ -16,7 +16,7 @@ export default {
     data: function(){
       return {
         titulo: this.title,
-        source: this.source
+        sourceImg: this.source
       }
     },
     methods: {
