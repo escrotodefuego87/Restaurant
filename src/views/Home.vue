@@ -5,10 +5,13 @@
       <v-content>
         <v-container fluid fill-height>
           <section class="CardContainer" align="center">
-            <div>
-            <CardIn title="Menu" 
-            source="https://cdn.pixabay.com/photo/2014/10/19/20/59/hamburger-494706_960_720.jpg"/>
-            </div>
+            <router-link to="/menu" exact>
+              <div>
+              <CardIn title="Menu" 
+              source="https://cdn.pixabay.com/photo/2014/10/19/20/59/hamburger-494706_960_720.jpg"/>
+              </div>
+            </router-link>
+            
             <div>
             <CardIn title="Generar cuenta" 
             source="https://cdn.pixabay.com/photo/2016/07/15/21/07/credit-card-1520400_960_720.jpg"/>
@@ -45,14 +48,11 @@ import CardIn from '../components/CardIndex';
 
 export default {
   name: 'Home',
-  // props: ['dialog'],
 
   data: function(){
-    return {
-      // dialog: true
+    return {      
       
-      
-}
+    }
   },
   components: {
     CardIn,
