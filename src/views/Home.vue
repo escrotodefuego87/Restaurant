@@ -33,15 +33,14 @@
         </v-container>
       </v-content>
       
-    <!-- <Signin /> -->
+    
     </v-app>
   </div>
 </template>
 
 <script>
 import CardIn from '../components/CardIndex';
-import Login from '../components/Login';
-import Signin from '../components/Signin';
+
 
 
 export default {
@@ -57,8 +56,7 @@ export default {
   },
   components: {
     CardIn,
-    Login,
-    Signin
+    
   },
   mounted(){
 
