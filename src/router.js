@@ -2,6 +2,8 @@ import Vue from "vue";
 import Router from "vue-router";
 import Home from "./views/Home.vue";
 import Menu from "./components/menu.vue";
+import Cuenta from "./components/cuenta.vue"
+import Efectivo from "./components/efectivo.vue"
 
 Vue.use(Router);
 
@@ -15,9 +17,19 @@ export default new Router({
       component: Home
     },
     {
+      path: "/efectivo",
+      name: "Efectivo Total",
+      component: Efectivo
+    },
+    {
       path: "/menu",
       name: "Menu",
       component: Menu
+    },
+    {
+      path: "/cuenta",
+      name: "Cuenta",
+      component: Cuenta
     },
     {
       path: "/about",

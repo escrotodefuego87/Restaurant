@@ -48,33 +48,42 @@
                 </v-card-actions>
             </v-card>
         </v-dialog>
+    <c-snack ref="details-child"></c-snack>
     </div>
 </template>
 
 <script>
-  export default {
-    props:["titulo","precio","dialog"],
-    data () {
-      return {
-        cantidad:1
-      }
-    },
-    methods:{
-        aceptar(){
-            var total=(this.cantidad*this.precio);
-            alert('Producto ('+this.titulo+') \n Precio total: '+total);
-            this.cantidad=1;
-            this.$parent.modal_agregar=false;
+    import snack from './snack.vue'
+    export default {
+        props:["titulo","precio","dialog"],
+        data () {
+            return {
+                cantidad:1,
+                snackOpen:false,
+                snackText:'',
+            }
         },
-        cancelar(){
-            this.cantidad=1;
-            this.$parent.modal_agregar=false;
+        components:{
+            'c-snack':snack
         },
-        restar(){
-            if(this.cantidad>1){
-                this.cantidad -= 1;
+        methods:{
+            aceptar(){
+                this.snackOpen=false;
+                var total=(this.cantidad*this.precio);
+                this.snackText=(this.cantidad+' productos agregados');
+                this.snackOpen=true;
+                this.cantidad=1;
+                this.$parent.modal_agregar=false;
+            },
+            cancelar(){
+                this.cantidad=1;
+                this.$parent.modal_agregar=false;
+            },
+            restar(){
+                if(this.cantidad>1){
+                    this.cantidad -= 1;
+                }
             }
         }
     }
-  }
 </script>
