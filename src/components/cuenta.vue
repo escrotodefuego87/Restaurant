@@ -138,6 +138,8 @@ export default {
             doc.text(20,orden,"Total")
             var total=String(subtotal+propina);
             doc.text(130,orden,total)
+            orden=orden+8;
+            doc.text(20, orden,"Gracias por su compra")
             doc.save("ticket.pdf");
         }
     }

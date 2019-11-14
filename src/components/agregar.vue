@@ -48,12 +48,18 @@
                 </v-card-actions>
             </v-card>
         </v-dialog>
-    <c-snack ref="details-child"></c-snack>
+        <div class="text-center ma-2">
+            <v-snackbar
+            v-model="snackOpen"
+            :color="success"
+            >
+                {{ snackText }}
+            </v-snackbar>
+        </div>
     </div>
 </template>
 
 <script>
-    import snack from './snack.vue'
     export default {
         props:["titulo","precio","dialog"],
         data () {
