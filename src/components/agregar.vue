@@ -70,7 +70,7 @@
             }
         },
         components:{
-            'c-snack':snack
+            
         },
         methods:{
             aceptar(){

@@ -1,7 +1,6 @@
 <template>
     <v-container class="stlAll">
         <v-flex>
-
             <div v-for="tipos in menu" :key="tipos">
                 <p
                 class="display-1 "

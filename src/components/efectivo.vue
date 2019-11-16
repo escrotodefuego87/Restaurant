@@ -53,7 +53,7 @@ export default {
                 global=(global+this.datos[i].cantidad);
             }
             return global;
-        },
+        }
     }
 }
 </script>
